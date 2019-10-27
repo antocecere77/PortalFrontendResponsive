@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-form-control',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormControlComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
+  }
+
+  testApi() {
+    return this.httpClient.get(`http://localhost:5051/api/test`).subscribe(
+      res => {console.log('Success ' + res);
+      },
+      error => {
+        console.log('Error ' + error);
+      }
+    );
   }
 
 }
