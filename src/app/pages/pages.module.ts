@@ -67,10 +67,9 @@ import { HoverSidebarMenuComponent } from './components/custom-layout/hover-side
 import { FixedSidebarLayoutComponent } from './components/custom-layout/fixed-sidebar-layout/fixed-sidebar-layout.component';
 import { ClosedSidebarLayoutComponent } from './components/custom-layout/closed-sidebar-layout/closed-sidebar-layout.component';
 import { OffcanvasSidebarLayoutComponent } from './components/custom-layout/offcanvas-sidebar-layout/offcanvas-sidebar-layout.component';
-
-
-
-
+import { NgxFileDropModule } from 'ngx-file-drop';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -136,7 +135,9 @@ import { OffcanvasSidebarLayoutComponent } from './components/custom-layout/offc
   imports: [
     CommonModule,
     PagesRoutingModule,
-    SharedModule
+    SharedModule,
+    NgxFileDropModule,
+    FormsModule
   ],
 })
 export class PagesModule { }
