@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   signupForm: FormGroup;
   invalidUserPassword = false;
+  isLoading = false;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signupForm);
+    this.isLoading = true;
     const userId = this.signupForm.value.userId;
     const password = this.signupForm.value.password;
 
@@ -38,6 +40,7 @@ export class LoginComponent implements OnInit {
       error => {
         console.log(error);
         this.invalidUserPassword = true;
+        this.isLoading = false;
       });
   }
 }
