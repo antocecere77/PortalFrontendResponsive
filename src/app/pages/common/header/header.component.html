@@ -1,0 +1,88 @@
+<header class="flux-header clearfix" [attr.nav-layout]="navLayout"
+  [attr.navbar-type]="toggleStatus ? defaultNavbar : toggleNavbar " [attr.effect-type]="navbarEffect"
+  [attr.header-theme]="headerColorTheme" [attr.collapsed-left-header]="collapsedLeftHeader"
+  [attr.device-type]="deviceType">
+  <div class="flux-header-wrapper clearfix">
+    <div class="flux-brand" [attr.left-header-theme]="leftHeaderColorTheme">
+      <span class="flux-brand-logo"><i class="fas fa-user-ninja"></i></span>
+      <span class="flux-brand-text">Automation</span>
+    </div>
+    <div class="flux-header-navbar">
+      <div class="flux-left-header clearfix">
+        <div class="sidebarToggle" (click)="changeTheToggleStatus()"><i class="fas fa-bars"></i></div>
+        <div class="left-header-nav">
+          <ul>
+            <!--li><a class="dropdown-toggle">Mega</a></li>
+            <li><a class="dropdown-toggle">New</a></li-->          
+            <li class="nav-item dropdown" style="cursor: pointer;" (click)="toggleNotification()">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-bell"><span class="badge badge-danger">3</span></i></a>
+                
+                  <div class="dropdown-menu" [ngClass]="showNotifications ? 'show': ''">
+                  <a class="dropdown-item text-dark" style="background: white; cursor: pointer;"> <i class="fas fa-bell" style="padding-right: 10px;"></i>Notification (3) - Mark all as read</a>                 
+                  <div class="dropdown-divider"></div>                                          
+                  <li><a class="dropdown-item" style="background: white" href="#">
+                    <div class="row">                       
+                        <div class="col-lg-2 col-sm-2 col-2 text-center">
+                        <span><i class="fas fa-exclamation-triangle text-warning border-warning"></i></span>
+                        </div>    
+                        <div class="col-lg-10 col-sm-10 col-10">
+                          <strong class="text-info">Task Genius Fragment 2019</strong>
+                          <div class="text-info">
+                            Terminated with warning
+                          </div>
+                          <small class="text-warning">27.11.2019, 15:00</small>
+                        </div>    
+                    </div>
+                    </a>
+                  </li>
+                  <li><a class="dropdown-item" style="background: white" href="#">
+                      <div class="row">                       
+                          <div class="col-lg-2 col-sm-2 col-2 text-center">
+                          <span><i class="fas fa-exclamation text-info"></i></span>
+                          </div>    
+                          <div class="col-lg-10 col-sm-10 col-10">
+                            <strong class="text-info">Task Genius Poldo 2019</strong>
+                            <div class="text-info">
+                              Terminated without errors
+                            </div>
+                            <small class="text-warning">27.11.2019, 15:00</small>
+                          </div>    
+                      </div>
+                      </a>
+                    </li>
+                    <li><a class="dropdown-item" style="background: white" href="#">
+                        <div class="row">                       
+                            <div class="col-lg-2 col-sm-2 col-2 text-center">
+                            <span><i class="fas fa-times-circle text-danger"></i></span>
+                            </div>    
+                            <div class="col-lg-10 col-sm-10 col-10">
+                              <strong class="text-info">Task Genius Poldo 2019</strong>
+                              <div class="text-info">
+                                Terminated with errors
+                              </div>
+                              <small class="text-warning">27.11.2019, 15:00</small>
+                            </div>    
+                        </div>
+                        </a>
+                      </li>
+
+                   
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item text-dark" style="background: white" href="#">View all notification </a>             
+                </div>
+              </li>   
+          </ul>          
+        </div>
+      </div>
+
+      <div class="flux-right-header clearfix">
+        <ul>        
+          <!--li><a href=""><i class="far fa-list-alt"></i></a></li-->
+          <li><a href=""><i class="fas fa-user-cog"></i> <span *ngIf="deviceType !== 'mobile'" style="padding-left: 10px">{{userId}}</span> </a></li>
+          <li (click)="logout()"><a><i class="fas fa-power-off"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
