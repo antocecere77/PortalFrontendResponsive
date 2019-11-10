@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private httpClient: HttpClient) { }
 
   login(username: string, password: string) {
-    return this.httpClient.post<any>(`http://localhost:5051/auth`,
+    return this.httpClient.post<any>(`http://localhost:9090/auth`,
       {username, password})
       .pipe(map(
         data => {

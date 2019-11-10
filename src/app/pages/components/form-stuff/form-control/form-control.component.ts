@@ -13,9 +13,24 @@ export class FormControlComponent implements OnInit {
   ngOnInit() {
   }
 
+
   testApi() {
     return this.httpClient
-    .get(`http://localhost:5051/api/test`,
+    .get(`http://localhost:9090/api/test`,
+        {responseType: 'text'})
+        .subscribe(
+          res => {
+            console.log('Success ' + res);
+          },
+          error => {
+            console.log('Error ' + error);
+          }
+      );
+  }
+
+  testApi2() {
+    return this.httpClient
+    .get(`http://localhost:9090/api2/test`,
         {responseType: 'text'})
         .subscribe(
           res => {
