@@ -8,6 +8,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { AuthService } from './auth/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './shared/services/auth-interceptor.service';
+import { WebSocketService } from './shared/services/websocket.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { AuthInterceptorService } from './shared/services/auth-interceptor.servi
     HttpClientModule,
     SharedModule.forRoot()
   ],
-  providers: [AuthService,
+  providers: [AuthService, WebSocketService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
