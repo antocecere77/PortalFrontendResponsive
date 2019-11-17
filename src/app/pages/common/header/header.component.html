@@ -2,10 +2,12 @@
   [attr.navbar-type]="toggleStatus ? defaultNavbar : toggleNavbar " [attr.effect-type]="navbarEffect"
   [attr.header-theme]="headerColorTheme" [attr.collapsed-left-header]="collapsedLeftHeader"
   [attr.device-type]="deviceType">
+ 
   <div class="flux-header-wrapper clearfix">
+    <div class="corner-ribbon top-left sticky green shadow">LOCALHOST</div>
     <div class="flux-brand" [attr.left-header-theme]="leftHeaderColorTheme">
       <span class="flux-brand-logo"><i class="fas fa-user-ninja"></i></span>
-      <span class="flux-brand-text">Automation</span>
+      <span class="flux-brand-text">PS Automation</span>
     </div>
     <div class="flux-header-navbar">
       <div class="flux-left-header clearfix">
