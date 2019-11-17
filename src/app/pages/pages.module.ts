@@ -70,6 +70,7 @@ import { OffcanvasSidebarLayoutComponent } from './components/custom-layout/offc
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import {FileUploadModule} from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -137,7 +138,8 @@ import { BrowserModule } from '@angular/platform-browser';
     PagesRoutingModule,
     SharedModule,
     NgxFileDropModule,
-    FormsModule
+    FormsModule,
+    FileUploadModule
   ],
 })
 export class PagesModule { }

@@ -9,12 +9,14 @@ import { AuthService } from './auth/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './shared/services/auth-interceptor.service';
 import { WebSocketService } from './shared/services/websocket.service';
+import {FileUploadModule} from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    // FileUploadModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
