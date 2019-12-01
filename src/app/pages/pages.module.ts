@@ -71,6 +71,7 @@ import { NgxFileDropModule } from 'ngx-file-drop';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {FileUploadModule} from 'ng2-file-upload';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -139,7 +140,8 @@ import {FileUploadModule} from 'ng2-file-upload';
     SharedModule,
     NgxFileDropModule,
     FormsModule,
-    FileUploadModule
+    FileUploadModule,
+    NgbModule
   ],
 })
 export class PagesModule { }
