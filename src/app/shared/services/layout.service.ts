@@ -1,5 +1,5 @@
 import { Injectable, HostListener } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -7,6 +7,7 @@ export class LayoutService {
 
   // Commaon Settings for Horizontal and Vertical Navigation
   public navLayout = 'vertical';  // Value Should be 'horizontal' or 'vertical'
+  public showEnviromentInfo = true;
   public toggleStatus = true;     // Value Should be 'true' or 'false'
   public themeLayout = 'wide'; // value Should be 'wide', 'box'
   public headerHeight = 50;
@@ -53,6 +54,8 @@ export class LayoutService {
 
   private setNavLayout = new BehaviorSubject<string>(this.navLayout);
   navLayoutCast = this.setNavLayout.asObservable();
+
+  enviromentInfo = new BehaviorSubject<boolean>(true);
 
   private setCollapsedLeftHeader = new BehaviorSubject<boolean>(this.collapsedLeftHeader);
   collapsedLeftHeaderCast = this.setCollapsedLeftHeader.asObservable();
@@ -120,6 +123,10 @@ export class LayoutService {
   }
   getNavLayout(nl: string) {
     this.setNavLayout.next(nl);
+  }
+  toggleShowEnviromentInfo() {  
+    this.showEnviromentInfo = !this.showEnviromentInfo;
+    this.enviromentInfo.next(this.showEnviromentInfo);
   }
   getLeftHeaderThemeOnChange(themeName: string) {
     this.setLeftHeaderTheme.next(themeName);

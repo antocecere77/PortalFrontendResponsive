@@ -25,11 +25,19 @@ export class HeaderComponent implements OnInit {
 
   showNotifications: boolean;
   userId: string;
+  showEnviromentInfo: boolean;
 
-  constructor( private layoutService: LayoutService, private authService: AuthService, private router: Router) { }
+  constructor( private layoutService: LayoutService, private authService: AuthService, private router: Router) { 
+    this.layoutService.enviromentInfo.subscribe( (info: boolean) => {
+      this.showEnviromentInfo = info;
+    });
+  }
 
   ngOnInit() {
     this.userId = this.authService.getUserId();
+    this.layoutService.enviromentInfo.subscribe( (info: boolean) => {
+      this.showEnviromentInfo = info;
+    });
   }
 
   changeTheToggleStatus() {
@@ -40,6 +48,7 @@ export class HeaderComponent implements OnInit {
     this.showNotifications = !this.showNotifications;
     console.log(this.showNotifications);
   }
+
 
   logout() {
     this.authService.logout();

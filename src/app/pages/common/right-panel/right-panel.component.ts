@@ -34,12 +34,16 @@ export class RightPanelComponent implements OnInit {
       this.layoutService.getCollapsedLeftHeader(false);
     }
   }
-  changeNavbar(event: any) {
+  changeNavbar(event: any) {    
     if (event.target.checked) {
       this.layoutService.getNavLayout('horizontal');
    } else {
     this.layoutService.getNavLayout('vertical');
    }
+  }
+
+  toggleEnviromentInfo() {       
+   this.layoutService.toggleShowEnviromentInfo();   
   }
   onLheaderThemeChange(themeName: string) {
     event.stopPropagation();
