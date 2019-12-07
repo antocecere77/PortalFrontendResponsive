@@ -62,6 +62,7 @@ import { HoverSidebarMenuComponent } from './components/custom-layout/hover-side
 import { FixedSidebarLayoutComponent } from './components/custom-layout/fixed-sidebar-layout/fixed-sidebar-layout.component';
 import { ClosedSidebarLayoutComponent } from './components/custom-layout/closed-sidebar-layout/closed-sidebar-layout.component';
 import { OffcanvasSidebarLayoutComponent } from './components/custom-layout/offcanvas-sidebar-layout/offcanvas-sidebar-layout.component';
+import { NgbdSortableHeader } from './components/pages-layouts/off-canvas-mobile-menu/sortable.directive';
 
 const routes: Routes = [
   {
@@ -291,6 +292,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  declarations: [NgbdSortableHeader],
+  exports: [RouterModule, NgbdSortableHeader]
 })
 export class PagesRoutingModule { }
